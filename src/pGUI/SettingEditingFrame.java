@@ -1,4 +1,4 @@
-/**	ShowManager v0.0	Dh	31.7.2020
+/**	ShowManager v0.0	Dh	2.8.2020
  * 
  * 	pGUI
  * 	  ModFrame
@@ -634,7 +634,7 @@ public class SettingEditingFrame extends EditingFrame {
 		}
 	}
 	
-	/**	Dh	29.7.2020
+	/**	Dh	2.8.2020
 	 * 
 	 */
 	private void apply() {
@@ -642,14 +642,14 @@ public class SettingEditingFrame extends EditingFrame {
 			if ((!tfBrowserField_0.getText().equals("")) && isExistingFile(tfBrowserField_1.getText()) ) {
 				rManager.setBrowserName(tfBrowserField_0.getText());
 				rManager.setBrowserPath(tfBrowserField_1.getText());
-				
-				rManager.setRatingEnabled(cbGUICheckBox_0.isSelected());
-				rManager.setGenreEnabled(cbGUICheckBox_1.isSelected());
-				rManager.setHostEnabled(cbGUICheckBox_2.isSelected());
-				rManager.setURLEnabled(cbGUICheckBox_3.isSelected());
-				
-				cancel();
 			}
+			
+			rManager.setRatingEnabled(cbGUICheckBox_0.isSelected());
+			rManager.setGenreEnabled(cbGUICheckBox_1.isSelected());
+			rManager.setHostEnabled(cbGUICheckBox_2.isSelected());
+			rManager.setURLEnabled(cbGUICheckBox_3.isSelected());
+			
+			cancel();
 		} catch(Exception ex) {MainManager.handleException(ex);}
 	}
 	

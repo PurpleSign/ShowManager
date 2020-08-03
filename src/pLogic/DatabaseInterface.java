@@ -1,4 +1,4 @@
-/**	ShowManager v0.0	Dh	31.7.2020
+/**	ShowManager v0.0	Dh	2.8.2020
  * 
  * 	pLogic
  * 	  DatabaseInterface
@@ -17,6 +17,11 @@
 package pLogic;
 
 import java.io.File;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.SocketAddress;
+import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +32,8 @@ import javax.persistence.Query;
 import javax.xml.bind.JAXB;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
+
+import com.mysql.cj.jdbc.MysqlDataSource;
 
 import pDataStructures.List;
 
@@ -102,7 +109,7 @@ public class DatabaseInterface {
 		
 		initDatabaseConnection(vDatabase, vUser, vPassword);
 	}
-	/**	Dh	31.7.2020
+	/**	Dh	2.8.2020
 	 * 
 	 * @param pDatabase
 	 * @param pUser
@@ -117,12 +124,18 @@ public class DatabaseInterface {
 			vProps.put("javax.persistence.jdbc.user", pUser);
 			vProps.put("javax.persistence.jdbc.password", pPassword);
 			
-			rEMF = Persistence.createEntityManagerFactory("ShowManager", vProps);
-			rEM = rEMF.createEntityManager();
-			
-			if ((rEM == null) || (rEM.isOpen() == false)) {
-				rEMF.close();
+			if (isConnectionOn(pDatabase, pUser, pPassword) == true) {
+				rEMF = Persistence.createEntityManagerFactory("ShowManager", vProps);
+				rEM = rEMF.createEntityManager();
 				
+				if ((rEM == null) || (rEM.isOpen() == false)) {
+					rEMF.close();
+					
+					rEM = null;
+					rEMF = null;
+				}
+			}
+			else {
 				rEM = null;
 				rEMF = null;
 			}
@@ -703,4 +716,31 @@ public class DatabaseInterface {
 		
 		return vRet;
 	}
+	
+	/**	Dh	2.8.2020
+	 * 
+	 * @param pDatabase
+	 * @param pUser
+	 * @param pPassword
+	 * @return
+	 * @throws Exception
+	 */
+	private boolean isConnectionOn(String pDatabase, String pUser, String pPassword) throws Exception {
+		boolean vRet = false;
+		
+		InetAddress addr = InetAddress.getByName("127.0.0.1");
+		int port = 3306;
+		
+		SocketAddress sockaddr = new InetSocketAddress(addr, port);
+		Socket sock = new Socket();
+		
+		try {
+			sock.connect(sockaddr, 2000);
+			if (sock.isConnected() == true) vRet = true;
+		}
+		catch(Exception ex) {;}
+		
+		return vRet;
+	}
+	
 }

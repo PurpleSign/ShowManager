@@ -61,7 +61,6 @@ public class MainManager {
 				vExcList.next();
 			}
 		}
-		handleException(new Exception(""+databaseInterface.getOSName()));
 	}
 	
 //----------------------------------------------------------------------------------------------------

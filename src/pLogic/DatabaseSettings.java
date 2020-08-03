@@ -1,4 +1,4 @@
-/**	ShowManager v0.0	Dh	31.7.2020
+/**	ShowManager v0.0	Dh	2.8.2020
  * 
  * 	pLogic
  * 	  DatabseSettings
@@ -62,37 +62,34 @@ public class DatabaseSettings {
 	
 	//------------------------------------------------------------------------------------------------
 
-	/**	Dh	31.7.2020
+	/**	Dh	2.8.2020
 	 * 
 	 * @param pDatabaseName
 	 * @throws Exception
 	 */
 	public void setDatabaseName(String pDatabaseName) throws Exception{
 		if (pDatabaseName != null) {
-			if (!pDatabaseName.equals("")) databaseName = pDatabaseName;
-			else throw new Exception("02; DaSet,sDN");
+			databaseName = pDatabaseName;
 		} else throw new Exception("04; DaSet,sDN");
 	}
-	/**	Dh	31.7.2020
+	/**	Dh	2.8.2020
 	 * 
 	 * @param pUserName
 	 * @throws Exception
 	 */
 	public void setUserName(String pUserName) throws Exception{
 		if (pUserName != null) {
-			if (!pUserName.equals("")) userName = pUserName;
-			else throw new Exception("02; DaSet,sUN");
+			userName = pUserName;
 		} else throw new Exception("04; DaSet,sUN");
 	}
-	/**	Dh	31.7.2020
+	/**	Dh	2.8.2020
 	 * 
 	 * @param pPassword
 	 * @throws Exception
 	 */
 	public void setPassword(String pPassword) throws Exception{
 		if (pPassword != null) {
-			if (!pPassword.equals("")) password = pPassword;
-			else throw new Exception("02; DaSet,sP");
+			password = pPassword;
 		} else throw new Exception("04; DaSet,sP");
 	}
 	

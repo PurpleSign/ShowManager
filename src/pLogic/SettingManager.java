@@ -1,4 +1,4 @@
-/**	ShowManager v0.0	Dh	31.7.2020
+/**	ShowManager v0.0	Dh	2.8.2020
  * 
  * 	pLogic
  * 	  LogicManager
@@ -273,29 +273,32 @@ public class SettingManager extends LogicManager {
 		guiSettings.setFrameHeight(pHeight);
 	}
 	
-	/**	Dh	31.7.2020
+	/**	Dh	2.8.2020
 	 * 
 	 * @param pDatabaseName
 	 * @throws Exception
 	 */
 	public void setDatabaseName(String pDatabaseName) throws Exception{
-		databaseSettings.setDatabaseName(pDatabaseName);
+		if (!pDatabaseName.equals("")) databaseSettings.setDatabaseName(pDatabaseName);
+		else throw new Exception("02; SeMan,sDN");
 	}
-	/**	Dh	31.7.2020
+	/**	Dh	2.8.2020
 	 * 
 	 * @param pUserName
 	 * @throws Exception
 	 */
 	public void setUseName(String pUserName) throws Exception{
-		databaseSettings.setUserName(pUserName);
+		if (!pUserName.equals("")) databaseSettings.setUserName(pUserName);
+		else throw new Exception("02; SeMan,sUN");
 	}
-	/**	Dh	31.7.2020
+	/**	Dh	2.8.2020
 	 * 
 	 * @param pPassword
 	 * @throws Exception
 	 */
 	public void setPassword(String pPassword) throws Exception{
-		databaseSettings.setPassword(pPassword);
+		if (!pPassword.equals("")) databaseSettings.setPassword(pPassword);
+		else throw new Exception("02; SeMan,sP");
 	}
 	
 //----------------------------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-/**	ShowManager v0.0	Dh	28.7.2020
+/**	ShowManager v0.0	Dh	2.8.2020
  * 
  * 	pGUI
  * 	  ModFrame
@@ -169,7 +169,7 @@ public class BrowserEditFrame extends ModFrame {
 		contentPane.setLayout(gl_contentPane);
 	}
 	
-	/**	Dh	28.7.2020
+	/**	Dh	2.8.2020
 	 * 
 	 */
 	protected void updated() throws Exception{
@@ -199,7 +199,7 @@ public class BrowserEditFrame extends ModFrame {
 			    		vExt = vFileName.substring(vInd+1).toLowerCase();
 			    		
 			    		if (vExt.equals("exe")) vRet = true;
-			    	}
+			    	}else if (vInd == -1) vRet = true;
 			    }
 
 				return vRet;
