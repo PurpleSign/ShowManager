@@ -347,7 +347,7 @@ public class DatabaseInterface {
 	
 	//------------------------------------------------------------------------------------------------
 	
-	/**	Dh	31.7.2020
+	/**	Dh	3.8.2020
 	 * 
 	 * @param pGenereList
 	 * @throws Exception
@@ -359,20 +359,18 @@ public class DatabaseInterface {
 		
 		if (rEM != null) {
 			rEM.getTransaction().begin();
-			if (!vCurList.isEmpty()) {
-				if (!vExisList.isEmpty()) {
-					vExisList.toFirst();
+			if (!vExisList.isEmpty()) {
+				vExisList.toFirst();
 					
-					while(!vExisList.isEnd()) {
-						vCur = vExisList.getCurrent();
+				while(!vExisList.isEnd()) {
+					vCur = vExisList.getCurrent();
 						
-						if (vCur instanceof Genre) {
-							if ((!vCurList.isEmpty()) && (vCurList.haveObject(vCur))) vCurList.deleteElement(vCur);
-							else rEM.remove(vCur);
-						} else throw new Exception("06; DaInt,sG");
+					if (vCur instanceof Genre) {
+						if ((!vCurList.isEmpty()) && (vCurList.haveObject(vCur))) vCurList.deleteElement(vCur);
+						else rEM.remove(vCur);
+					} else throw new Exception("06; DaInt,sG");
 						
-						vExisList.next();
-					}
+					vExisList.next();
 				}
 			}
 			
@@ -396,7 +394,7 @@ public class DatabaseInterface {
 			rEM.getTransaction().commit();
 		}
 	}
-	/**	Dh	31.7.2020
+	/**	Dh	3.8.2020
 	 * 
 	 * @param pShowList
 	 * @throws Exception
@@ -421,30 +419,28 @@ public class DatabaseInterface {
 			List vExisList = loadShows();
 			
 			rEM.getTransaction().begin();
-			if (!vCurList.isEmpty()) {
-				if (!vExisList.isEmpty()) {
-					vExisList.toFirst();
+			if (!vExisList.isEmpty()) {
+				vExisList.toFirst();
+				
+				while(!vExisList.isEnd()) {
+					vCur = vExisList.getCurrent();
 					
-					while(!vExisList.isEnd()) {
-						vCur = vExisList.getCurrent();
-						
-						if (vCur instanceof ShowElement) {
-							if ((!vCurList.isEmpty()) && (vCurList.haveObject(vCur))) {
-								vCurWrap = rEM.find(GenreListElementWrapper.class, ((ShowElement)vCur).getId());
-								 
-								 if (vCurWrap != null) vCurWrap.setGenreIDsPerList(getElementByID(vGenreListIDList, ((ShowElement)vCur).getId()));
-								 else throw new Exception("04; DaInt,sS");
-								 
-								 vCurList.deleteElement(vCur);
-							}
-							else {
-								rEM.remove(vExisList.getCurrent());
-								rEM.remove(rEM.find(GenreListElementWrapper.class, ((ShowElement)vExisList.getCurrent()).getId()));
-							}
-						} else throw new Exception("06; DaInt,sS");
-						
-						vExisList.next();
-					}
+					if (vCur instanceof ShowElement) {
+						if ((!vCurList.isEmpty()) && (vCurList.haveObject(vCur))) {
+							vCurWrap = rEM.find(GenreListElementWrapper.class, ((ShowElement)vCur).getId());
+							 
+							 if (vCurWrap != null) vCurWrap.setGenreIDsPerList(getElementByID(vGenreListIDList, ((ShowElement)vCur).getId()));
+							 else throw new Exception("04; DaInt,sS");
+							 
+							 vCurList.deleteElement(vCur);
+						}
+						else {
+							rEM.remove(vExisList.getCurrent());
+							rEM.remove(rEM.find(GenreListElementWrapper.class, ((ShowElement)vExisList.getCurrent()).getId()));
+						}
+					} else throw new Exception("06; DaInt,sS");
+					
+					vExisList.next();
 				}
 			}
 			
@@ -490,7 +486,7 @@ public class DatabaseInterface {
 			rEM.getTransaction().commit();
 		}
 	}
-	/**	Dh	31.7.2020
+	/**	Dh	3.8.2020
 	 * 
 	 * @param pShowListList
 	 * @throws Exception
@@ -515,30 +511,28 @@ public class DatabaseInterface {
 			List vExisList = loadShowLists();
 			
 			rEM.getTransaction().begin();
-			if (!vCurList.isEmpty()) {
-				if (!vExisList.isEmpty()) {
-					vExisList.toFirst();
+			if (!vExisList.isEmpty()) {
+				vExisList.toFirst();
+				
+				while(!vExisList.isEnd()) {
+					vCur = vExisList.getCurrent();
 					
-					while(!vExisList.isEnd()) {
-						vCur = vExisList.getCurrent();
-						
-						if (vCur instanceof ShowList) {
-							if ((!vCurList.isEmpty()) && (vCurList.haveObject(vCur))) {
-								vCurWrap = rEM.find(ShowListElementWrapper.class, ((ShowList)vCur).getId());
-								 
-								 if (vCurWrap != null) vCurWrap.setShowIDsPerList(getElementByID(vShowListIDList, ((ShowList)vCur).getId()));
-								 else throw new Exception("04; DaInt,sSL");
-								 
-								 vCurList.deleteElement(vCur);
-							}
-							else {
-								rEM.remove(vExisList.getCurrent());
-								rEM.remove(rEM.find(ShowListElementWrapper.class, ((ShowList)vExisList.getCurrent()).getId()));
-							}
-						} else throw new Exception("06; DaInt,sSL");
-						
-						vExisList.next();
-					}
+					if (vCur instanceof ShowList) {
+						if ((!vCurList.isEmpty()) && (vCurList.haveObject(vCur))) {
+							vCurWrap = rEM.find(ShowListElementWrapper.class, ((ShowList)vCur).getId());
+							 
+							 if (vCurWrap != null) vCurWrap.setShowIDsPerList(getElementByID(vShowListIDList, ((ShowList)vCur).getId()));
+							 else throw new Exception("04; DaInt,sSL");
+							 
+							 vCurList.deleteElement(vCur);
+						}
+						else {
+							rEM.remove(vExisList.getCurrent());
+							rEM.remove(rEM.find(ShowListElementWrapper.class, ((ShowList)vExisList.getCurrent()).getId()));
+						}
+					} else throw new Exception("06; DaInt,sSL");
+					
+					vExisList.next();
 				}
 			}
 			
@@ -564,7 +558,7 @@ public class DatabaseInterface {
 			rEM.getTransaction().commit();
 		}
 	}
-	/**	Dh	31.7.2020
+	/**	Dh	3.8.2020
 	 * 
 	 * @param pHostList
 	 * @throws Exception
@@ -576,23 +570,21 @@ public class DatabaseInterface {
 		
 		if (rEM != null) {
 			rEM.getTransaction().begin();
-			if (!vCurList.isEmpty()) {
-				if (!vExisList.isEmpty()) {
-					vExisList.toFirst();
+			if (!vExisList.isEmpty()) {
+				vExisList.toFirst();
+				
+				while(!vExisList.isEnd()) {
+					vCur = vExisList.getCurrent();
 					
-					while(!vExisList.isEnd()) {
-						vCur = vExisList.getCurrent();
-						
-						if (vCur instanceof Host) {
-							if ((!vCurList.isEmpty()) && (vCurList.haveObject(vCur))) vCurList.deleteElement(vCur);
-							else rEM.remove(vCur);
-						} else throw new Exception("06; DaInt,sH");
-						
-						vExisList.next();
-					}
+					if (vCur instanceof Host) {
+						if ((!vCurList.isEmpty()) && (vCurList.haveObject(vCur))) vCurList.deleteElement(vCur);
+						else rEM.remove(vCur);
+					} else throw new Exception("06; DaInt,sH");
+					
+					vExisList.next();
 				}
 			}
-			
+		
 			rEM.getTransaction().commit();
 			rEM.getTransaction().begin();
 			
