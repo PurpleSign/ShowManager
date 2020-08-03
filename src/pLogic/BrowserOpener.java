@@ -1,4 +1,4 @@
-/**	ShowManager v0.0	Dh	28.7.2020
+/**	ShowManager v0.0	Dh	3.8.2020
  * 
  * 	pLogic
  * 	  BrowserOpener
@@ -17,7 +17,9 @@
  */
 package pLogic;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStreamReader;
 
 import pDataStructures.List;
 
@@ -315,7 +317,7 @@ public class BrowserOpener {
 	
 	//------------------------------------------------------------------------------------------------
 	
-	/**	Dh	28.7.2020
+	/**	Dh	3.8.2020
 	 * 
 	 * @param pShow
 	 * @throws Exception
@@ -331,17 +333,9 @@ public class BrowserOpener {
 		if (vURL != null) {
 			if (!vURL.equals("")) {
 				if (browserFile.exists() && browserFile.canExecute()) {
-					vBrowserPath = browserFile.toString();
-					vInd = vBrowserPath.lastIndexOf("\\");
-					
-					if ((vInd > 0) && (vInd < (vBrowserPath.length()-1))) {
-			    		vBrowserFile = vBrowserPath.substring(vInd+1);
-			    		vBrowserPath = vBrowserPath.substring(0, vInd);
-			    		
-			    		processBuilder = new ProcessBuilder();
-			    		processBuilder.command(browserFile.toString(), vURL);
-						process = processBuilder.start();
-					}
+			    	processBuilder = new ProcessBuilder();
+			    	processBuilder.command(browserFile.toString(), vURL);
+					process = processBuilder.start();
 				} else throw new Exception("10; BrOpe,oS");
 			} else throw new Exception("02; BrOpe,oS");
 		} else throw new Exception("04; BrOpe,oS");
