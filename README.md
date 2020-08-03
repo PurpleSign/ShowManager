@@ -6,4 +6,5 @@ Außerdem Unterstützt die Anwendung das öffnen einer Serie in einem Browser au
 
 # Vorraussetzungen für volle Funktionalität
 System: Windows, Linux.
+
 Datenbankserver: lokalen MySQL-Server auf den Port 3306 und eine erstellte Datenbank, sowie einen Zugang mit berechtigung zum Erstellen, auslesen und verändern von Tabellen udn Einträgen.
