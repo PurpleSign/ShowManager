@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.showmanager.gui.controller.editors.DatabaseConnectionEditorController">
+   <children>
+      <Label minHeight="-Infinity" minWidth="-Infinity" text="Datenbank Verbindung">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity">
+         <children>
+            <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0">
+               <children>
+                  <VBox minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <Label minHeight="30.0" minWidth="-Infinity" text="Datenbankname:" />
+                        <Label minHeight="30.0" minWidth="-Infinity" text="User:" />
+                        <Label minHeight="30.0" minWidth="-Infinity" text="Passwort:" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <TextField fx:id="tfDBName" minHeight="30.0" minWidth="-Infinity" />
+                        <TextField fx:id="tfUser" minHeight="30.0" minWidth="-Infinity" />
+                        <PasswordField fx:id="tfPassword" minHeight="30.0" minWidth="-Infinity" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0">
+         <children>
+            <Button fx:id="btConnect" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#progress" prefHeight="30.0" prefWidth="200.0" text="Verbinden" />
+            <Button fx:id="btBack" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="200.0" text="Abbrechen" />
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

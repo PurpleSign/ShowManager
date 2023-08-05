@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="org.showmanager.gui.controller.editors.BrowserEditorController">
+   <children>
+      <Label minHeight="-Infinity" minWidth="-Infinity" text="Browser bearbeiten">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <HBox minHeight="-Infinity" minWidth="-Infinity" spacing="10.0">
+         <children>
+            <VBox minHeight="-Infinity" minWidth="-Infinity" spacing="5.0">
+               <children>
+                  <Label minHeight="30.0" minWidth="-Infinity" text="Browser:" />
+                  <Label minHeight="30.0" minWidth="-Infinity" text="Pfad:" />
+               </children>
+            </VBox>
+            <VBox minHeight="-Infinity" minWidth="-Infinity" spacing="5.0">
+               <children>
+                  <TextField fx:id="tfBrowserName" minHeight="30.0" minWidth="-Infinity" />
+                  <HBox minHeight="-Infinity" minWidth="-Infinity" spacing="10.0">
+                     <children>
+                        <TextField fx:id="tfBrowserPath" minHeight="30.0" minWidth="-Infinity" />
+                        <Button fx:id="btBrowserPath" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#chooseBrowserFile" text="Browser" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0">
+         <children>
+            <Button fx:id="btProgress" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#progress" prefHeight="30.0" prefWidth="150.0" text="Ändern" />
+            <Button fx:id="btBack" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="150.0" text="Abbrechen" />
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>
