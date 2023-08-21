@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '15'
-          distribution: 'open'
+          distribution: 'liberica'
 
       # Make sure the latest GraalVM is installed.
       # after this step env.JAVA_HOME and env.GRAALVM_HOME will point to the GraalVM location
