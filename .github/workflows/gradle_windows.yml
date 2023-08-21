@@ -2,26 +2,26 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
 #                      and: https://docs.gluonhq.com/#platforms_android
 
-name: Java CI with Gradle
+name: Java CI with Gradle Windows
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    #branches: [ main ]
+  #pull_request:
+    #branches: [ main ]
 
 jobs:
-  build:
+  build-gradle-project:
     runs-on: windows-latest
       
     steps:
       # Checkout your project
       - uses: actions/checkout@v2
-      - name: Set up JDK 15
-        uses: actions/setup-java@v2
-        with:
-          java-version: '15'
-          distribution: 'adopt'
+      #- name: Set up JDK 15
+      #  uses: actions/setup-java@v2
+      #  with:
+      #    java-version: '15'
+      #    distribution: 'adopt'
           
       # Setup the Windows build environment
       - name: Add msbuild to PATH
@@ -43,13 +43,13 @@ jobs:
         run: mkdir staging
 
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+      #- name: Grant execute permission for gradlew
+      #  run: chmod +x gradlew
 
       # Build your project using Maven
       # The android profile is used, which means a native build will be created for the client target android.
       # This step also uses some env variables taken from the repo secrets. See the section 'Setup Android Keystore' below.
-      - name: Android Build with Gradle
+      - name: Windows Build with Gradle
         run: ./gradlew clean nativeBuild nativePackage --stacktrace
 
       # Copy the native binary to the staging directory
