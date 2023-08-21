@@ -54,7 +54,7 @@ jobs:
 
       # Copy the native binary to the staging directory
       - name: Copy native image to staging
-        run: cp -r target/gluonfx/x86_64-windows/*.exe staging
+        run: cp -r build/gluonfx/x86_64-windows/*.exe staging
 
 
       # Upload the staging directoy as a build artifact
