@@ -31,7 +31,7 @@ dependencies {
 	//implementation 'org.apache.commons:commons-text:1.10.0'
 	
 	implementation 'org.openjfx:javafx-graphics:$javafx.version:win'
-	//implementation 'org.openjfx:javafx-graphics:$javafx.version:linux'
+	implementation 'org.openjfx:javafx-graphics:$javafx.version:linux'
 	//implementation 'org.openjfx:javafx-graphics:$javafx.version'
 	//runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:win"
 	//runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:linux"
@@ -82,7 +82,7 @@ gluonfx {
     				  "org.showmanager.gui.tableElements.ShowTableElement",
     				  //
     				  "javafx.scene.control.ChoiceBox", "javafx.scene.control.Spinner", "javafx.scene.control.CheckBox", "javafx.scene.control.MenuItem",
-    				  "javafx.scene.control.Menu", "javafx.scene.control.RadioMenuItem", "javafx.scene.control.MenuBar"
+    				  "javafx.scene.control.Menu", "javafx.scene.control.RadioMenuItem", "javafx.scene.control.MenuBar", "javafx.scene.control.SplitPane"
     				  /*"javafx.scene.control.DatePicker", "javafx.scene.control.ChoiceBox", "javafx.scene.control.CheckBox",
     				  "javafx.scene.control.Slider"*/ ]
 
