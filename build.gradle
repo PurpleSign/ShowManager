@@ -29,8 +29,11 @@ dependencies {
 	implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:4.0.2' 
 	//implementation 'org.apache.commons:commons-text:1.10.0'
 	
-	runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:win"
-	runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:linux"
+	implementation 'org.openjfx:javafx-graphics:$javafx.version:win'
+	implementation 'org.openjfx:javafx-graphics:$javafx.version:linux'
+	implementation 'org.openjfx:javafx-graphics:$javafx.version'
+	//runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:win"
+	//runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:linux"
 	
 	//testImplementation('org.junit.jupiter:junit-jupiter:5.9.2')	
 }
@@ -60,7 +63,7 @@ gluonfx {
         services 'display', 'lifecycle', 'statusbar', 'storage'
     }
     
-    reflectionList = ["org.showmanager.gui.controller.MainStageController",
+    reflectionList = [//"org.showmanager.gui.controller.MainStageController",
     				  "org.showmanager.gui.controller.InfoMessageController",
     				  "org.showmanager.gui.controller.editors.BrowserEditorController",
     				  "org.showmanager.gui.controller.editors.DatabaseConnectionEditorController",
@@ -78,8 +81,8 @@ gluonfx {
     				  "org.showmanager.gui.tableElements.ShowTableElement",
     				  //
     				  "javafx.scene.control.ChoiceBox", "javafx.scene.control.Spinner", "javafx.scene.control.CheckBox", "javafx.scene.control.MenuItem",
-    				  "javafx.scene.control.Menu", "javafx.scene.control.RadioMenuItem"
+    				  "javafx.scene.control.Menu", "javafx.scene.control.RadioMenuItem", "javafx.scene.control.MenuBar"
     				  /*"javafx.scene.control.DatePicker", "javafx.scene.control.ChoiceBox", "javafx.scene.control.CheckBox",
-    				  "javafx.scene.control.Slider"*/]
+    				  "javafx.scene.control.Slider"*/ ]
 
 }
