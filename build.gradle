@@ -30,9 +30,9 @@ dependencies {
 	//implementation 'jakarta.mail:jakarta.mail-api:2.1.2'
 	//implementation 'org.apache.commons:commons-text:1.10.0'
 	
-	implementation 'org.openjfx:javafx-graphics:$javafx.version:win'
-	implementation 'org.openjfx:javafx-graphics:$javafx.version:linux'
-	//implementation 'org.openjfx:javafx-graphics:$javafx.version'
+	//implementation 'org.openjfx:javafx-graphics:$javafx.version:win'
+	//implementation 'org.openjfx:javafx-graphics:$javafx.version:linux'
+	implementation 'org.openjfx:javafx-graphics:$javafx.version'
 	//runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:win"
 	//runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:linux"
 	
@@ -67,7 +67,7 @@ gluonfx {
     reflectionList = ["org.showmanager.gui.controller.MainStageController",
     				  "org.showmanager.gui.controller.InfoMessageController",
     				  "org.showmanager.gui.controller.editors.BrowserEditorController",
-    				  "org.showmanager.gui.controller.editors.DatabaseConnectionEditorController",
+    				  //"org.showmanager.gui.controller.editors.DatabaseConnectionEditorController",
     				  "org.showmanager.gui.controller.editors.SettingEditorController",
     				  "org.showmanager.gui.controller.editors.adding.GenreEditorController",
     				  "org.showmanager.gui.controller.editors.adding.HostEditorController",
@@ -81,8 +81,11 @@ gluonfx {
     				  "org.showmanager.gui.tableElements.IntegerElement", "org.showmanager.gui.tableElements.NameElement",
     				  "org.showmanager.gui.tableElements.ShowTableElement",
     				  //
+    				  "org.showmanager.logic.settings.DatabaseSetting", "org.showmanager.logic.settings.GUISettings", "org.showmanager.logic.settings.LogicSettings",
+    				  //
     				  "javafx.scene.control.ChoiceBox", "javafx.scene.control.Spinner", "javafx.scene.control.CheckBox", "javafx.scene.control.MenuItem",
-    				  "javafx.scene.control.Menu", "javafx.scene.control.RadioMenuItem", "javafx.scene.control.MenuBar", "javafx.scene.control.SplitPane"
+    				  "javafx.scene.control.Menu", "javafx.scene.control.RadioMenuItem", "javafx.scene.control.MenuBar", "javafx.scene.control.SeparatorMenuItem",
+    				  "javafx.scene.control.SplitPane"
     				  /*"javafx.scene.control.DatePicker", "javafx.scene.control.ChoiceBox", "javafx.scene.control.CheckBox",
     				  "javafx.scene.control.Slider"*/ ]
 

@@ -88,7 +88,7 @@ public class DatabaseManager {
 			databaseSettings = loadDatabaseSettings();
 			//initDatabaseConnection();
 		}catch(Exception ex) {
-			if (!ex.getMessage().equals("21; lDS,DaM")) LogManager.handleException(ex);
+			if (!ex.getMessage().equals("21; lOfXML,DaM")) LogManager.handleException(ex);
 			else databaseSettings = new DatabaseSetting();
 		}
 	}
