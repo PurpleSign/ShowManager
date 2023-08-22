@@ -29,6 +29,9 @@ dependencies {
 	implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:4.0.2' 
 	//implementation 'org.apache.commons:commons-text:1.10.0'
 	
+	runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:win"
+	runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:linux"
+	
 	//testImplementation('org.junit.jupiter:junit-jupiter:5.9.2')	
 }
 
@@ -57,28 +60,24 @@ gluonfx {
         services 'display', 'lifecycle', 'statusbar', 'storage'
     }
     
-    /**reflectionList = ["org.stattool.client.gui.controller.viewController.BottomLineController",
-    				  "org.stattool.client.gui.controller.viewController.ClientMenuController",
-    				  "org.stattool.client.gui.controller.viewController.PollManagerController",
-    				  "org.stattool.client.gui.controller.viewController.PollEditorController",
-    				  "org.stattool.client.gui.controller.viewController.AnswerController",
-    				  "org.stattool.client.gui.controller.layerController.MessagePopupController",
-    				  "org.stattool.client.gui.controller.layerController.FileChooserController",
-    				  "org.stattool.client.gui.controller.viewController.questionTypeController.StringQuestionController",
-    				  "org.stattool.client.gui.controller.viewController.questionTypeController.BoolQuestionController",
-    				  "org.stattool.client.gui.controller.viewController.questionTypeController.NumberQuestionController",
-    				  "org.stattool.client.gui.controller.viewController.questionTypeController.RangedNumberQuestionController",
-    				  "org.stattool.client.gui.controller.viewController.questionTypeController.DateQuestionController",
-    				  "org.stattool.client.gui.controller.viewController.questionTypeController.RangedDateQuestionController",
-    				  "org.stattool.client.gui.controller.viewController.questionTypeController.MultiChoiceQuestionController",
+    reflectionList = ["org.showmanager.gui.controller.MainStageController",
+    				  "org.showmanager.gui.controller.InfoMessageController",
+    				  "org.showmanager.gui.controller.editors.BrowserEditorController",
+    				  "org.showmanager.gui.controller.editors.DatabaseConnectionEditorController",
+    				  "org.showmanager.gui.controller.editors.SettingEditorController",
+    				  "org.showmanager.gui.controller.editors.adding.GenreEditorController",
+    				  "org.showmanager.gui.controller.editors.adding.HostEditorController",
+    				  "org.showmanager.gui.controller.editors.adding.ShowEditorController",
+    				  "org.showmanager.gui.controller.editors.adding.ShowListEditorController",
+    				  "org.showmanager.gui.controller.editors.multiple.MultipleGenreEditorController",
+    				  "org.showmanager.gui.controller.editors.multiple.MultipleHostEditorController",
+    				  "org.showmanager.gui.controller.editors.multiple.MultipleShowEditorController",
+    				  "org.showmanager.gui.controller.subparts.ShowListSceneController",
     				  //
-    				  "org.stattool.basics.IDElement", "org.stattool.basics.polls.BasicAnswer",
-    				  "org.stattool.basics.Settings", "org.stattool.client.ClientSettings", "org.stattool.basics.OriginIDElement",
-    				  "org.stattool.basics.polls.Poll", "org.stattool.basics.polls.StringQuestion", "org.stattool.basics.polls.BoolQuestion",
-    				  "org.stattool.basics.polls.NumberQuestion", "org.stattool.basics.polls.RangedNumberQuestion", "org.stattool.basics.polls.DateQuestion",
-    				  "org.stattool.basics.polls.RangedDateQuestion", "org.stattool.basics.polls.MultiChoiceQuestion",
+    				  "org.showmanager.gui.tableElements.IntegerElement", "org.showmanager.gui.tableElements.NameElement",
+    				  "org.showmanager.gui.tableElements.ShowTableElement",
     				  //
-    				  "javafx.scene.control.DatePicker", "javafx.scene.control.ChoiceBox", "javafx.scene.control.CheckBox",
-    				  "javafx.scene.control.Slider"]*/
+    				  /*"javafx.scene.control.DatePicker", "javafx.scene.control.ChoiceBox", "javafx.scene.control.CheckBox",
+    				  "javafx.scene.control.Slider"*/]
 
 }
