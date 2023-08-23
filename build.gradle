@@ -69,7 +69,7 @@ gluonfx {
     reflectionList = ["org.showmanager.gui.controller.MainStageController",
     				  "org.showmanager.gui.controller.InfoMessageController",
     				  "org.showmanager.gui.controller.editors.BrowserEditorController",
-    				  //"org.showmanager.gui.controller.editors.DatabaseConnectionEditorController",
+    				  "org.showmanager.gui.controller.editors.DatabaseConnectionEditorController",
     				  "org.showmanager.gui.controller.editors.SettingEditorController",
     				  "org.showmanager.gui.controller.editors.adding.GenreEditorController",
     				  "org.showmanager.gui.controller.editors.adding.HostEditorController",
