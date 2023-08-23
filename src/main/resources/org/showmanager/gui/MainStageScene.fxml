@@ -67,7 +67,7 @@
       </MenuBar>
       <SplitPane dividerPositions="0.16666666666666666" minHeight="-Infinity" minWidth="-Infinity">
         <items>
-            <VBox alignment="CENTER" fillWidth="false" minHeight="-Infinity" minWidth="-Infinity">
+            <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity">
                <children>
                   <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="ALWAYS">
                      <VBox.margin>
