@@ -65,6 +65,8 @@ gluonfx {
         services 'display', 'lifecycle', 'statusbar', 'storage'
     }
     
+    if (System.getProperty("os.name").contains("Linux")) linkerArgs = [ System.getenv('GRAALVM_HOME')+"/lib/static/linux-amd64/glibc/libjaas.a" ]
+    
     javaStaticSdkVersion = "17"
     
     reflectionList = ["org.showmanager.gui.controller.MainStageController",
@@ -86,13 +88,16 @@ gluonfx {
     				  //
     				  "org.showmanager.logic.settings.DatabaseSetting", "org.showmanager.logic.settings.GUISettings", "org.showmanager.logic.settings.LogicSettings",
     				  //
-    				  
+    				  "org.showmanager.logic.showentities.Genre", "org.showmanager.logic.showentities.Host", "org.showmanager.logic.showentities.ShowElement",
+    				  "org.showmanager.logic.showentities.ShowList", "org.showmanager.logic.showentities.wrappers.GenreListElementWrapper",
+    				  "org.showmanager.logic.showentities.wrappers.ShowListElementWrapper",
     				  //
     				  "javafx.scene.control.ChoiceBox", "javafx.scene.control.Spinner", "javafx.scene.control.CheckBox", "javafx.scene.control.MenuItem",
     				  "javafx.scene.control.Menu", "javafx.scene.control.RadioMenuItem", "javafx.scene.control.MenuBar", "javafx.scene.control.SeparatorMenuItem",
     				  "javafx.scene.control.SplitPane", "javafx.scene.control.Separator", "javafx.scene.control.TableView", "javafx.scene.control.TableColumn",
-    				  "javafx.scene.control.Tab", "javafx.scene.control.TitledPane", "javafx.scene.control.PasswordField", "javafx.scene.control.ListView",
+    				  "javafx.scene.control.Tab", "javafx.scene.control.TitledPane", "javafx.scene.control.ListView", "javafx.scene.control.PasswordField",
     				  "javafx.scene.layout.VBox", "javafx.scene.layout.HBox",
+    				  "javafx.scene.input.KeyCode",
     				  "jakarta.persistence.EntityManager", "jakarta.persistence.EntityManagerFactory", "jakarta.persistence.Persistence"
     				   //"jakarta.mail.internet.MimeMultipart"//,"com.sun.securtity.auth.modul.UnixSystem.getUnixInfo"
     				  /*"javafx.scene.control.DatePicker", "javafx.scene.control.ChoiceBox", "javafx.scene.control.CheckBox",
