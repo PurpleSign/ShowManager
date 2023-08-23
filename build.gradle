@@ -87,7 +87,7 @@ gluonfx {
     				  //
     				  "javafx.scene.control.ChoiceBox", "javafx.scene.control.Spinner", "javafx.scene.control.CheckBox", "javafx.scene.control.MenuItem",
     				  "javafx.scene.control.Menu", "javafx.scene.control.RadioMenuItem", "javafx.scene.control.MenuBar", "javafx.scene.control.SeparatorMenuItem",
-    				  "javafx.scene.control.SplitPane", "javafx.scene.control.Separator"
+    				  "javafx.scene.control.SplitPane", "javafx.scene.control.Separator", "javafx.scene.control.VBox"
     				  /*"javafx.scene.control.DatePicker", "javafx.scene.control.ChoiceBox", "javafx.scene.control.CheckBox",
     				  "javafx.scene.control.Slider"*/ ]
 
