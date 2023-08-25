@@ -97,7 +97,8 @@ gluonfx {
     				  "javafx.scene.control.Tab", "javafx.scene.control.TitledPane", "javafx.scene.control.ListView", "javafx.scene.control.PasswordField",
     				  "javafx.scene.layout.VBox", "javafx.scene.layout.HBox",
     				  "javafx.scene.input.KeyCode",
-    				  "jakarta.persistence.EntityManager", "jakarta.persistence.EntityManagerFactory", "jakarta.persistence.Persistence"
+    				  "jakarta.persistence.EntityManager", "jakarta.persistence.EntityManagerFactory", "jakarta.persistence.Persistence",
+    				  "org.eclipse.persistence.exceptions.i18n.EntityManagerSetupExceptionResource"
     				  ]
 
 }
