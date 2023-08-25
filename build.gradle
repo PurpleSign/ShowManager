@@ -13,9 +13,7 @@ repositories {
     }
 }
 
-//mainClassName = 'org.stattool.client.StatToolClient'
 mainClassName = 'org.showmanager.MainManager'
-//mainClassName = 'org.stattool.basics.ConverterStarter'
 
 dependencies {
     implementation 'com.gluonhq:charm:6.2.2'
@@ -24,16 +22,13 @@ dependencies {
 	implementation 'javax.xml.stream:stax-api:1.0-2'
 	
 	implementation 'com.mysql:mysql-connector-j:8.1.0'
-	//implementation 'jakarta.persistence:jakarta.persistence-api:3.1.0'
 	implementation 'org.hibernate:hibernate-core-jakarta:5.6.15.Final'
 	implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:4.0.2'
-	//implementation 'org.apache.commons:commons-text:1.10.0'
 	
 	implementation 'jakarta.mail:jakarta.mail-api:2.1.2'
 	
 	//implementation 'org.openjfx:javafx-graphics:$javafx.version:win'
-	//implementation group: 'org.openjfx', name: 'javafx-graphics', version: '18', classifier: ''
-	//implementation 'org.openjfx:javafx-graphics:$javafx.version'
+	//implementation 'org.openjfx:javafx-graphics:$javafx.version:linux'
 	//runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:win"
 	//runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:linux"
 	
@@ -101,8 +96,6 @@ gluonfx {
     				  "javafx.scene.layout.VBox", "javafx.scene.layout.HBox",
     				  "javafx.scene.input.KeyCode",
     				  "jakarta.persistence.EntityManager", "jakarta.persistence.EntityManagerFactory", "jakarta.persistence.Persistence"
-    				   //"jakarta.mail.internet.MimeMultipart"//,"com.sun.securtity.auth.modul.UnixSystem.getUnixInfo"
-    				  /*"javafx.scene.control.DatePicker", "javafx.scene.control.ChoiceBox", "javafx.scene.control.CheckBox",
-    				  "javafx.scene.control.Slider"*/ ]
+    				  ]
 
 }
