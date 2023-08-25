@@ -124,16 +124,17 @@ public class DatabaseManager {
 	public void initDatabaseConnection(String pDatabase, String pUser, String pPassword) throws Exception{
 		try {
 			Map<String, String> vProps = new HashMap<String, String>();
-			
+			LogManager.handleMessage("iniConnection A");
 			vProps.put("javax.persistence.jdbc.url", "jdbc:mysql://localhost:3306/"+pDatabase+"?serverTimezone=UTC");
 			vProps.put("javax.persistence.jdbc.user", pUser);
 			vProps.put("javax.persistence.jdbc.password", pPassword);
-			
+			LogManager.handleMessage("iniConnection B");
 			if (isConnectionOn(pDatabase, pUser, pPassword) == true) {
-				
+				LogManager.handleMessage("iniConnection C");
 				rEMF = Persistence.createEntityManagerFactory("ShowManager", vProps);
+				LogManager.handleMessage("iniConnection D");
 				rEM = rEMF.createEntityManager();
-				
+				LogManager.handleMessage("iniConnection E");
 				if ((rEM == null) || (rEM.isOpen() == false)) {
 					rEMF.close();
 					
@@ -182,9 +183,9 @@ public class DatabaseManager {
 	 */
 	public boolean ping(String pDatabase, String pUser, String pPassword) throws Exception{
 		boolean vRet = false;
-		
+		LogManager.handleMessage("DM Ping A");
 		initDatabaseConnection(pDatabase, pUser, pPassword);
-		
+		LogManager.handleMessage("Dm Ping B");
 		if (haveConnection()) {
 			vRet = true;
 			
@@ -599,16 +600,20 @@ public class DatabaseManager {
 	 */
 	private boolean isConnectionOn(String pDatabase, String pUser, String pPassword) throws Exception {
 		boolean vRet = false;
-		
+		LogManager.handleMessage("isConnectionOn A");
 		InetAddress addr = InetAddress.getByName("127.0.0.1");
 		int port = 3306;
-		
+		LogManager.handleMessage("isConnectionOn B");
 		SocketAddress sockaddr = new InetSocketAddress(addr, port);
+		LogManager.handleMessage("isConnectionOn C");
 		Socket sock = new Socket();
 		try {
+			LogManager.handleMessage("isConnectionOn D");
 			sock.connect(sockaddr, 2000);
+			LogManager.handleMessage("isConnectionOn E");
 			if (sock.isConnected() == true) {
 				vRet = true;
+				LogManager.handleMessage("isConnectionOn F");
 				sock.close();
 			}
 
