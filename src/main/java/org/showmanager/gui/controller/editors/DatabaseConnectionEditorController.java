@@ -106,7 +106,7 @@ public class DatabaseConnectionEditorController extends AbstractSettingEditorCon
 	 */
 	@FXML
 	public void progress() {
-		LogManager.handleMessage("Start A");
+		
 		if (ping() == true) {
 			try {
 				super.settingManager.setDatabaseName(tfDBName.getText());
@@ -131,19 +131,18 @@ public class DatabaseConnectionEditorController extends AbstractSettingEditorCon
 	private boolean ping() {
 		boolean vRet = false;
 		String vDatabase, vUser, vPassword;
-		LogManager.handleMessage("Ping A");
+
 		vDatabase = tfDBName.getText();
 		vUser = tfUser.getText();
 		vPassword = tfPassword.getText();
-		LogManager.handleMessage("Ping B");
+		
 		if ((!vDatabase.equals("")) && (!vUser.equals("")) && (!vPassword.equals(""))) {
 			try {
-				LogManager.handleMessage("Ping C");
 				vRet = super.settingManager.ping(vDatabase, vUser, vPassword);
 				if (vRet == false) LogManager.handleMessage("Verbindung fehlgeschlagen!");//System.out.println("Verbdindung fehlgeschlagen!");//JOptionPane.showMessageDialog(null, "Verbdindung fehlgeschlagen!", "Verbdindung fehlgeschlagen!", JOptionPane.INFORMATION_MESSAGE);
 			}catch(Exception ex) {LogManager.handleException(ex);}
 		}
-		LogManager.handleMessage("Ping D");
+		
 		return vRet;
 	}
 	

@@ -60,6 +60,8 @@ gluonfx {
         services 'display', 'lifecycle', 'statusbar', 'storage'
     }
     
+    bundlesList = ["org.eclipse.persistence.exceptions.i18n.PersistenceUnitLoadingExceptionResource"]
+    
     if (System.getProperty("os.name").contains("Linux")) linkerArgs = [ System.getenv('GRAALVM_HOME')+"/lib/static/linux-amd64/glibc/libjaas.a" ]
     
     javaStaticSdkVersion = "17"
